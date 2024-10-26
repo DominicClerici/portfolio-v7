@@ -1,9 +1,19 @@
 import LogoSVG from "../LogoSVG"
+import MobileHeader from "./MobileHeader"
 
 export default function Header() {
   return (
-    <header className="py-6 px-12 flex items-center gap-2 z-10 justify-between absolute top-0 left-0 w-screen">
-      <h1 className="text-2xl font-light flex items-center gap-2 text-anim-1">
+    <>
+      <DesktopHeader />
+      <MobileHeader />
+    </>
+  )
+}
+
+const DesktopHeader = () => {
+  return (
+    <header className="py-6 px-8 lg:px-12 md:flex items-center z-10 justify-between absolute top-0 left-0 w-screen hidden">
+      <h1 className="text-2xl font-light flex items-center gap-2 text-anim-1 font-display">
         <LogoSVG width={30} height={30} color="#D9D9D9" />
         Dominic Clerici
       </h1>
@@ -26,7 +36,7 @@ export default function Header() {
 const HeaderButton = ({ children, href }: { children: React.ReactNode; href: string }) => {
   return (
     <a
-      className="px-5 py-1 text-lg border rounded-full border-transparent hover:bg-accent/40 hover:border-border transition-colors cursor-pointer"
+      className="lg:px-5 md:px-3 py-1 text-lg border rounded-full border-transparent hover:bg-accent/40 hover:border-border transition-colors cursor-pointer"
       href={href}
     >
       {children}

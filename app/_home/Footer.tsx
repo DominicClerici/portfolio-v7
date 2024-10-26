@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t features-gradient py-24 px-12">
-      <div className="max-w-screen-lg mx-auto grid grid-cols-4">
-        <div className="col-span-2 group">
-          <p className="text-3xl font-bold text-muted-foreground">
+    <footer className="border-t features-gradient sm:py-16 py-12 lg:py-24 sm:px-8 px-4 lg:px-12">
+      <div className="max-w-screen-lg mx-auto grid xs:grid-cols-2 md:grid-cols-4">
+        <div className="col-span-2 group md:mb-0 mb-8">
+          <p className="text-3xl font-bold text-muted-foreground ">
             Made with <span className="group-hover:text-red-500 transition-colors">&#9829;</span> by
           </p>
           <h1 className="text-3xl font-bold text-foreground">Dominic Clerici</h1>

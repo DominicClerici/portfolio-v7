@@ -30,20 +30,52 @@ const MHSLogo = ({ className }: { className: string }) => {
   )
 }
 
-const SCROLL_SPEED = 0.02
+const className = {
+  card: "border p-4 md:p-6 lg:p-5 2xl:p-6 rounded-2xl bg-card",
+  title: "2xl:text-2xl lg:text-xl xs:text-2xl text-xl font-medium mb-2 flex items-center gap-2 font-display",
+  subTitle: "xl:text-lg lg:text-base xs:text-lg text-base font-medium flex items-center gap-1",
+  logo: "xl:h-12 xl:w-12 xs:h-10 xs:w-10 h-8 w-8",
+}
+
+const SCROLL_SPEED = 0.03
 
 export default function Features() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
+    // Check if viewport meets minimum width
+    const isLargeViewport = () => window.innerWidth >= 1024
+
     const handleScroll = () => {
-      setScrollY(window.scrollY)
+      // Only update scroll position if viewport is large enough
+      if (isLargeViewport()) {
+        setScrollY(window.scrollY)
+      } else {
+        setScrollY(0)
+      }
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    // Only add scroll listener if viewport is initially large enough
+    if (isLargeViewport()) {
+      window.addEventListener("scroll", handleScroll, { passive: true })
+    }
+
+    // Handle viewport size changes
+    const handleResize = () => {
+      if (isLargeViewport()) {
+        setScrollY(window.scrollY)
+        window.addEventListener("scroll", handleScroll, { passive: true })
+      } else {
+        setScrollY(0)
+        window.removeEventListener("scroll", handleScroll)
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleResize)
     }
   }, [])
 
@@ -62,9 +94,9 @@ export default function Features() {
 
   return (
     <section className="border-t features-gradient" id="about">
-      <div className="my-24 max-w-screen-xl mx-auto px-12 grid grid-cols-3 gap-12 scroll-effect-container text-anim-4">
-        <div className="border p-6 rounded-2xl bg-card " style={cardStyles.left}>
-          <h2 className="text-2xl font-medium mb-2 flex items-center gap-2">
+      <div className="sm:my-24 my-12 max-w-screen-xl mx-auto sm:px-8 px-4 grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3 lg:gap-8 2xl:gap-12 scroll-effect-container text-anim-4">
+        <div className={className.card} style={cardStyles.left}>
+          <h2 className={className.title}>
             <GraduationCapIcon className="h-7 w-7" />
             Education
           </h2>
@@ -74,9 +106,9 @@ export default function Features() {
               target="_blank"
               className="flex items-center gap-4 group p-4 -mx-4 rounded-lg hover:bg-accent transition-colors"
             >
-              <IndianaLogo className="h-12 w-12" />
+              <IndianaLogo className={className.logo} />
               <div className="flex flex-col">
-                <h3 className="text-lg font-medium flex items-center gap-1">
+                <h3 className={className.subTitle}>
                   Indiana University <span className="text-muted-foreground font-light text-sm">(2026)</span>
                   <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
                 </h3>
@@ -89,9 +121,9 @@ export default function Features() {
               target="_blank"
               className="flex items-center group gap-4 p-4 -mx-4 hover:bg-accent transition-colors rounded-lg"
             >
-              <MHSLogo className="h-12 w-12" />
+              <MHSLogo className={className.logo} />
               <div className="flex flex-col">
-                <h3 className="text-lg font-medium flex items-center gap-1">
+                <h3 className={className.subTitle}>
                   Miramonte High School
                   <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
                 </h3>
@@ -100,8 +132,8 @@ export default function Features() {
             </a>
           </div>
         </div>
-        <div className="border p-6 rounded-2xl bg-card" style={cardStyles.middle}>
-          <h2 className="text-2xl font-medium mb-2 flex items-center gap-2">
+        <div className={className.card} style={cardStyles.middle}>
+          <h2 className={className.title}>
             <BriefcaseBusinessIcon className="h-7 w-7" />
             Experience
           </h2>
@@ -111,9 +143,9 @@ export default function Features() {
               target="_blank"
               className="flex items-center gap-4 group p-4 -mx-4 rounded-lg hover:bg-accent transition-colors"
             >
-              <ArtesianLogo className="h-12 w-12" />
+              <ArtesianLogo className={className.logo} />
               <div className="flex flex-col">
-                <h3 className="text-lg font-medium flex items-center gap-1">
+                <h3 className={className.subTitle}>
                   Artesian Builds
                   <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
                 </h3>
@@ -126,9 +158,11 @@ export default function Features() {
               target="_blank"
               className="flex items-center group gap-4 p-4 -mx-4 hover:bg-accent transition-colors rounded-lg"
             >
-              <Image height={48} width={48} src={"/images/goodwill.png"} alt="Goodwill Logo" />
+              <div className={`relative ${className.logo}`}>
+                <Image fill src={"/images/goodwill.png"} alt="Goodwill Logo" />
+              </div>
               <div className="flex flex-col">
-                <h3 className="text-lg font-medium flex items-center gap-1">
+                <h3 className={className.subTitle}>
                   Goodwill
                   <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
                 </h3>
@@ -138,8 +172,8 @@ export default function Features() {
             </a>
           </div>
         </div>
-        <div className="border p-6 rounded-2xl bg-card" style={cardStyles.right}>
-          <h2 className="text-2xl font-medium mb-2 flex items-center gap-2">
+        <div className={`md:col-span-2 lg:col-span-1  ${className.card}`} style={cardStyles.right}>
+          <h2 className={className.title}>
             <Code2Icon className="h-7 w-7" />
             Languages/Frameworks
           </h2>

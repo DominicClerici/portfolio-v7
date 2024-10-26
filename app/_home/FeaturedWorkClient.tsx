@@ -71,32 +71,37 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   shadowClass,
   imgPath,
 }) => {
-  const contentOrder = isRight ? "order-1" : "order-none"
-  const imageOrder = isRight ? "order-none" : "order-1"
+  const contentOrder = isRight ? "lg:order-1" : "lg:order-none"
+  const imageOrder = isRight ? "lg:order-none" : "lg:order-1"
 
   return (
     <div
       ref={projectRef}
-      className={`grid grid-cols-3 gap-8 min-h-96 mt-48 transition-opacity duration-700`}
+      className={`grid grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:mt-24 mt-16 lg:mt-48 transition-opacity duration-700`}
       style={{
         opacity: isVisible ? 1 : 0.25,
       }}
     >
-      <div className={`py-8 ${contentOrder}`}>
-        <h2 className="text-3xl flex items-center gap-2 mb-4">
-          <Icon className="h-8 w-8" />
-          {title}
+      <div className={`lg:py-8 pb-4 ${contentOrder}`}>
+        <h2 className="text-3xl flex flex-col xs:flex-row xs:items-center gap-2 xs:mb-4 mb-2 font-display">
+          <span className="flex items-center gap-2">
+            <Icon className="h-8 w-8" />
+            {title}
+          </span>
+          <span className="items-center gap-2 xs:ml-4 lg:hidden flex">{children}</span>
         </h2>
         <p className="text-muted-foreground">{description}</p>
 
-        <ul className="flex flex-wrap gap-2 items-center mt-4">
+        <ul className="flex flex-wrap gap-2 items-center mt-2 lg:mt-4">
           {technologies.map((tech) => (
             <TechBadge key={tech}>{tech}</TechBadge>
           ))}
         </ul>
-        <span className="flex items-center gap-2 mt-8">{children}</span>
+        <span className="items-center gap-2 mt-8 hidden lg:flex">{children}</span>
       </div>
-      <div className={`relative col-span-2 rounded-2xl overflow-hidden border-2 group ${imageOrder} ${shadowClass}`}>
+      <div
+        className={`relative lg:col-span-2 rounded-2xl overflow-hidden border-2 min-h-48 xs:min-h-64 lg:min-h-96 group ${imageOrder} ${shadowClass}`}
+      >
         <Image quality={100} src={imgPath} alt={title} fill className="object-cover" />
       </div>
     </div>
@@ -145,7 +150,7 @@ const FeaturedWorkClient = () => {
         <a
           href="https://www.usespringtab.com/"
           target="_blank"
-          className="pl-5 pr-3 py-1 group flex items-center gap-2 font-medium border rounded-full border-primary/50 bg-primary/30 text-foreground hover:bg-primary/60 hover:border-primary transition-colors cursor-pointer"
+          className="pl-5 pr-3 text-base font-inter py-1 group flex items-center gap-2 font-medium border rounded-full border-primary/50 bg-primary/30 text-foreground hover:bg-primary/60 hover:border-primary transition-colors cursor-pointer"
         >
           View website
           <ArrowRight className="-translate-x-0.5 group-hover:translate-x-0.5 transition-transform h-4 w-4" />
@@ -171,7 +176,7 @@ const FeaturedWorkClient = () => {
         Icon={RallySVG}
         technologies={rallyTechnologies}
       >
-        <a className="px-5 py-1 font-medium border rounded-full border-primary/30 bg-primary/20 text-muted-foreground">
+        <a className="px-5 py-1 font-inter text-base font-medium border rounded-full border-primary/30 bg-primary/20 text-muted-foreground">
           Coming soon
         </a>
       </ProjectSection>
