@@ -13,7 +13,7 @@ export default function Header() {
 const DesktopHeader = () => {
   return (
     <header className="py-6 px-8 lg:px-12 md:flex items-center z-10 justify-between absolute top-0 left-0 w-screen hidden">
-      <h1 className="text-2xl font-light flex items-center gap-2 text-anim-1 font-display">
+      <h1 className="text-2xl font-light flex items-center gap-2  font-display">
         <LogoSVG width={30} height={30} color="#D9D9D9" />
         Dominic Clerici
       </h1>

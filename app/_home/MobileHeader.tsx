@@ -8,7 +8,7 @@ export default function MobileHeader() {
   return (
     <header className="py-6 xs:px-8 px-4 lg:px-12 flex items-center z-10 justify-between absolute top-0 left-0 w-screen md:hidden">
       <div className="z-10 flex justify-between w-full">
-        <h1 className="text-2xl font-light flex items-center gap-2 text-anim-1 font-display">
+        <h1 className="text-2xl font-light flex items-center gap-2  font-display">
           <LogoSVG width={30} height={30} color="#D9D9D9" />
           Dominic Clerici
         </h1>

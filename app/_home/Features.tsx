@@ -104,13 +104,13 @@ export default function Features() {
             <a
               href="https://bloomington.iu.edu/index.html"
               target="_blank"
-              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg hover:bg-accent transition-colors"
+              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg md:hover:bg-accent transition-colors"
             >
               <IndianaLogo className={className.logo} />
               <div className="flex flex-col">
                 <h3 className={className.subTitle}>
                   Indiana University <span className="text-muted-foreground font-light text-sm">(2026)</span>
-                  <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
+                  <ArrowRight className="h-4 w-4 md:-translate-x-0.5 md:opacity-0 md:group-hover:translate-x-0.5 md:group-hover:opacity-100 md:transition" />
                 </h3>
                 <p className="text-muted-foreground font-light leading-none">B.S. Computer Science</p>
                 <p className="text-muted-foreground font-light leading-none">Minor in Business</p>
@@ -119,13 +119,13 @@ export default function Features() {
             <a
               href="https://www.acalanes.k12.ca.us/miramonte/"
               target="_blank"
-              className="flex items-center group gap-4 p-4 -mx-4 hover:bg-accent transition-colors rounded-lg"
+              className="flex items-center group gap-4 p-4 -mx-4 md:hover:bg-accent transition-colors rounded-lg"
             >
               <MHSLogo className={className.logo} />
               <div className="flex flex-col">
                 <h3 className={className.subTitle}>
                   Miramonte High School
-                  <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
+                  <ArrowRight className="h-4 w-4 md:-translate-x-0.5 md:opacity-0 md:group-hover:translate-x-0.5 md:group-hover:opacity-100 md:transition" />
                 </h3>
                 <p className="text-muted-foreground font-light leading-none">Orinda, CA</p>
               </div>
@@ -141,13 +141,13 @@ export default function Features() {
             <a
               href="https://en.wikipedia.org/wiki/Artesian_Builds"
               target="_blank"
-              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg hover:bg-accent transition-colors"
+              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg md:hover:bg-accent transition-colors"
             >
               <ArtesianLogo className={className.logo} />
               <div className="flex flex-col">
                 <h3 className={className.subTitle}>
                   Artesian Builds
-                  <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
+                  <ArrowRight className="h-4 w-4 md:-translate-x-0.5 md:opacity-0 md:group-hover:translate-x-0.5 md:group-hover:opacity-100 md:transition" />
                 </h3>
                 <p className="text-muted-foreground font-light leading-none">Full Stack Developer</p>
                 <p className="text-muted-foreground font-light leading-none">May 2021 - Mar 2022</p>
@@ -156,7 +156,7 @@ export default function Features() {
             <a
               href="https://www.goodwill.org/"
               target="_blank"
-              className="flex items-center group gap-4 p-4 -mx-4 hover:bg-accent transition-colors rounded-lg"
+              className="flex items-center group gap-4 p-4 -mx-4 md:hover:bg-accent transition-colors rounded-lg"
             >
               <div className={`relative ${className.logo}`}>
                 <Image fill src={"/images/goodwill.png"} alt="Goodwill Logo" />
@@ -164,7 +164,7 @@ export default function Features() {
               <div className="flex flex-col">
                 <h3 className={className.subTitle}>
                   Goodwill
-                  <ArrowRight className="h-4 w-4 -translate-x-0.5 opacity-0 group-hover:translate-x-0.5 group-hover:opacity-100 transition" />
+                  <ArrowRight className="h-4 w-4 md:-translate-x-0.5 md:opacity-0 md:group-hover:translate-x-0.5 md:group-hover:opacity-100 md:transition" />
                 </h3>
                 <p className="text-muted-foreground font-light leading-none">Crew Member</p>
                 <p className="text-muted-foreground font-light leading-none">Mar 2021 - May 2021</p>

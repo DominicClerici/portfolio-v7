@@ -17,7 +17,7 @@ export default function Hero() {
         <p>Open to work</p>
         <ArrowRight className="h-4 w-4 -translate-x-2 group-hover:translate-x-1 transition opacity-0 group-hover:opacity-100" />
       </a>
-      <h1 className="md:text-7xl xs:text-6xl text-5xl text-anim-1 font-display font-medium">Dominic Clerici</h1>
+      <h1 className="md:text-7xl xs:text-6xl text-5xl font-display font-medium">Dominic Clerici</h1>
       <h2 className="xs:text-2xl text-xl text-muted-foreground text-anim-2 font-display">
         Creating online & offline experiences.
       </h2>
