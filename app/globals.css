@@ -3,19 +3,117 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 94%;
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 92%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 80%;
+  --primary: 239 83.5% 66.7%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 349 40% 35%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 0 0% 18%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-readable: 2 100% 85%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 349 40% 70%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
+html {
+  font-family: "Inter", "system-ui";
+  scroll-behavior: smooth;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+}
+
+.hero-mask-gradient {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 1) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 1) 100%);
+}
+
+.features-gradient {
+  background-image: radial-gradient(50% 50% at 50% 0%, rgb(20, 20, 20) 0%, rgb(0, 0, 0) 100%);
+}
+
+.body {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.parallax-1 {
+  transform: translateZ(-1px) scale(1.02);
+}
+
+.parallax-2 {
+  transform: translateZ(-2px) scale(1.04);
+}
+
+.spring-tab-shadow {
+  filter: drop-shadow(-15vw 0px 80px rgba(53, 105, 219, 0.2));
+}
+.rally-shadow {
+  filter: drop-shadow(15vw 0px 80px rgba(219, 53, 64, 0.2));
+}
+
+@keyframes textLoadIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-anim-1 {
+  animation: textLoadIn 0.4s ease-in-out;
+}
+.text-anim-2 {
+  animation: textLoadIn 0.4s ease-in-out 0.2s backwards;
+}
+.text-anim-3 {
+  animation: textLoadIn 0.4s ease-in-out 0.4s backwards;
+}
+.text-anim-4 {
+  animation: textLoadIn 0.4s ease-in-out 0.6s backwards;
+}
+
+@keyframes bgLoadIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.bg-load-in {
+  animation: bgLoadIn 1s cubic-bezier(0, 0, 0.5, 1);
 }
