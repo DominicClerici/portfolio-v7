@@ -143,7 +143,7 @@ const FeaturedWorkClient = () => {
         isVisible={isSpringTabVisible}
         projectRef={springTabRef}
         title="Spring tab"
-        description="A simple and elegant way to manage your browser tabs. Spring tab is a browser extension that helps you organize your tabs in a more efficient way."
+        description="A beautiful, customizable, and blazing fast start page for Chrome. With third party integrations, deep customization, and a focus on optimization and performance."
         Icon={SpringTabSVG}
         technologies={springTabTechnologies}
       >
@@ -172,7 +172,7 @@ const FeaturedWorkClient = () => {
         isVisible={isRallyVisible}
         projectRef={rallyRef}
         title="Rally"
-        description="Rally is a project management tool that helps you plan, track, and manage your work. Rally is designed to help you stay organized and keep your team on track."
+        description="The platform built from the ground up to simplify and streamline event sponsorship for both sponsors and hosts."
         Icon={RallySVG}
         technologies={rallyTechnologies}
       >

@@ -19,7 +19,7 @@ export default function Hero() {
       </a>
       <h1 className="md:text-7xl xs:text-6xl text-5xl font-display font-medium">Dominic Clerici</h1>
       <h2 className="xs:text-2xl text-xl text-muted-foreground text-anim-2 font-display">
-        Creating online & offline experiences.
+        Engineer & designer creating online experiences.
       </h2>
       <span className="flex items-center gap-4 mt-6 text-anim-2">
         <a
