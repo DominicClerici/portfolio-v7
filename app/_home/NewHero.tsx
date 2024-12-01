@@ -1,10 +1,4 @@
-import {
-  ArrowRightIcon,
-  CarIcon,
-  PaperclipIcon,
-  PartyPopperIcon,
-  UserIcon,
-} from "lucide-react"
+import { ArrowRightIcon, CarIcon, PaperclipIcon, UserIcon } from "lucide-react"
 import "./iconPanelStyles.css"
 import HoverButton from "../HoverButton"
 import HoverArrow from "../HoverArrow"
