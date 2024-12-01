@@ -3,7 +3,13 @@
 import sendEmail from "@/actions/sendEmail"
 import { CheckCircle2, Loader2, XCircleIcon } from "lucide-react"
 import React, { useState } from "react"
-import { useForm, SubmitHandler, UseFormRegister, UseFormWatch, FieldErrors } from "react-hook-form"
+import {
+  useForm,
+  SubmitHandler,
+  UseFormRegister,
+  UseFormWatch,
+  FieldErrors,
+} from "react-hook-form"
 
 interface IFormInput {
   name: string
@@ -44,10 +50,12 @@ const ContactForm = () => {
     return (
       <div className="mx-auto mt-8 flex flex-col gap-4 rounded-xl border border-border bg-card p-4 sm:mt-16 sm:p-8 md:p-12">
         <CheckCircle2 className="text-primary mx-auto w-14 h-14" />
-        <h2 className="text-center font-light text-2xl">Sent message successfully!</h2>
+        <h2 className="text-center font-light text-2xl">
+          Sent message successfully!
+        </h2>
         <p className="mt-2">
-          I&apos;ll get back to you as soon as possible. If you have any other questions or anything else you&apos;d
-          like to discuss, feel free to{" "}
+          I&apos;ll get back to you as soon as possible. If you have any other
+          questions or anything else you&apos;d like to discuss, feel free to{" "}
           <span
             onClick={() => {
               setSubmitSuccess(null)
@@ -65,7 +73,9 @@ const ContactForm = () => {
     return (
       <div className="mx-auto mt-8 flex flex-col gap-4 rounded-xl border border-border bg-card p-4 sm:mt-16 sm:p-8 md:p-12">
         <XCircleIcon className="text-red-400 mx-auto w-14 h-14" />
-        <h2 className="text-center font-light text-2xl">Failed to send message</h2>
+        <h2 className="text-center font-light text-2xl">
+          Failed to send message
+        </h2>
         <p className="mt-2">
           Something went wrong. Please try again later or{" "}
           <span
@@ -97,7 +107,9 @@ const ContactForm = () => {
           placeholder="Dominic Clerici"
           {...register("name", { required: "Name is required" })}
         />
-        {errors.name && <p className={className.error}>{errors.name.message}</p>}
+        {errors.name && (
+          <p className={className.error}>{errors.name.message}</p>
+        )}
       </div>
 
       <div className="flex flex-col">
@@ -116,7 +128,9 @@ const ContactForm = () => {
             },
           })}
         />
-        {errors.email && <p className={className.error}>{errors.email.message}</p>}
+        {errors.email && (
+          <p className={className.error}>{errors.email.message}</p>
+        )}
       </div>
 
       <MessageInput watch={watch} errors={errors} register={register} />
@@ -163,8 +177,12 @@ const MessageInput = ({ errors, register, watch }: MessageInputProps) => {
         })}
         className={`h-56 resize-none ${className.input}`}
       />
-      <p className="ml-auto text-sm text-muted-foreground">{currentVal ? currentVal.length : 0} / 5000</p>
-      {errors.message && <p className={className.error}>{errors.message.message}</p>}
+      <p className="ml-auto text-sm text-muted-foreground">
+        {currentVal ? currentVal.length : 0} / 5000
+      </p>
+      {errors.message && (
+        <p className={className.error}>{errors.message.message}</p>
+      )}
     </div>
   )
 }

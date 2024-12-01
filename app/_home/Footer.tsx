@@ -1,20 +1,30 @@
+import { PaperclipIcon } from "lucide-react"
+import HoverButton from "../HoverButton"
+
 export default function Footer() {
   return (
     <footer className="border-t features-gradient sm:py-16 py-12 lg:py-24 sm:px-8 px-4 lg:px-12">
       <div className="max-w-screen-lg mx-auto grid xs:grid-cols-2 md:grid-cols-4">
         <div className="col-span-2 group md:mb-0 mb-8">
           <p className="text-3xl font-bold text-muted-foreground ">
-            Made with <span className="group-hover:text-red-500 transition-colors">&#9829;</span> by
+            Made with{" "}
+            <span className="group-hover:text-red-500 transition-colors">
+              &#9829;
+            </span>{" "}
+            by
           </p>
-          <h1 className="text-3xl font-bold text-foreground">Dominic Clerici</h1>
+          <h1 className="text-3xl font-bold text-foreground">
+            Dominic Clerici
+          </h1>
           <span className="flex items-center gap-2 mt-4">
-            <a
+            <HoverButton
               href="/Dominic_Clerici_Resume.pdf"
               target="_blank"
-              className="px-7 py-2 text-lg font-medium border rounded-full border-primary/50 bg-primary/30 text-foreground hover:bg-primary/60 hover:border-primary transition-colors cursor-pointer"
+              className="primary-button button-style "
             >
               My resume
-            </a>
+              <PaperclipIcon className="w-4 h-4" />
+            </HoverButton>
           </span>
         </div>
         <div className="flex flex-col gap-2">
@@ -25,13 +35,19 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-primary font-medium text-lg">Socials</h2>
-          <TextEffect href="https://www.linkedin.com/in/dominic-clerici/" newTab>
+          <TextEffect
+            href="https://www.linkedin.com/in/dominic-clerici/"
+            newTab
+          >
             LinkedIn
           </TextEffect>
           <TextEffect href="https://github.com/DominicClerici" newTab>
             GitHub
           </TextEffect>
-          <TextEffect href="https://open.spotify.com/user/8f997cejjxl78ba6kt2n5te05" newTab>
+          <TextEffect
+            href="https://open.spotify.com/user/8f997cejjxl78ba6kt2n5te05"
+            newTab
+          >
             Spotify
           </TextEffect>
           <TextEffect href="https://ko-fi.com/dominicclerici" newTab>
@@ -43,7 +59,15 @@ export default function Footer() {
   )
 }
 
-const TextEffect = ({ children, href, newTab }: { children: React.ReactNode; href: string; newTab?: boolean }) => {
+const TextEffect = ({
+  children,
+  href,
+  newTab,
+}: {
+  children: React.ReactNode
+  href: string
+  newTab?: boolean
+}) => {
   return (
     <a
       target={newTab ? "_blank" : "_self"}

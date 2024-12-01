@@ -1,0 +1,102 @@
+.hover-button-effect {
+  position: relative;
+  z-index: 1;
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+.hover-button-effect::before {
+  user-select: none;
+  opacity: 0;
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--item-radius, 0.75rem);
+  transition: opacity 0.25s ease-in-out;
+}
+/* The background image should be centerd on the mouse positoin but trasition back to top right */
+.hover-button-effect::after {
+  user-select: none;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 0;
+  content: "";
+  position: absolute;
+  box-sizing: content-box;
+  padding: 1px;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: calc(var(--width) * 1.5) calc(var(--height) * 1.5);
+  background-position: calc(var(--mouse-x) - var(--width) / 1.5)
+    calc(var(--mouse-y) - var(--height) / 1.5);
+  border-radius: var(--item-radius, 0.75rem);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+.hover-button-effect:hover::before {
+  transition: opacity 0.075s ease-in-out;
+  opacity: 1;
+}
+.hover-button-effect:hover::after {
+  transition: opacity 0.075s ease-in-out;
+  opacity: 0.7;
+}
+.hover-button-effect:active::after {
+  opacity: 0.25;
+}
+.hover-button-effect:active::before {
+  opacity: 0.25;
+}
+
+/* for secondary variant */
+.hover-button-effect.secondary-button {
+  border: 1px solid hsl(var(--border));
+}
+.hover-button-effect.secondary-button::after {
+  background-image: radial-gradient(
+    ellipse closest-corner,
+    hsl(var(--foreground)) 0%,
+    hsl(var(--border)) 70%
+  );
+}
+.hover-button-effect.secondary-button::before {
+  background-image: radial-gradient(
+    var(--width) circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--foreground) / 0.12),
+    transparent
+  );
+}
+.hover-button-effect.secondary-button:active {
+  box-shadow: 0 0 0 1px hsl(var(--accent));
+}
+
+/* for primary variant */
+.hover-button-effect.primary-button {
+  border: 1px solid hsl(var(--primary) / 0.5);
+  background-color: hsl(var(--primary) / 0.15);
+}
+.hover-button-effect.primary-button::after {
+  background-image: radial-gradient(
+    ellipse closest-corner,
+    hsl(var(--foreground)) 0%,
+    transparent 50%
+  );
+}
+.hover-button-effect.primary-button::before {
+  background-image: radial-gradient(
+    var(--width) circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--primary) / 0.25),
+    transparent
+  );
+}
+.hover-button-effect.primary-button:active {
+  box-shadow: 0 0 0 1px hsl(var(--primary));
+}

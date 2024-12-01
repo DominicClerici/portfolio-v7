@@ -1,0 +1,139 @@
+.tile-1 {
+  --delay: 0.1s;
+  --color: #61dafb;
+  border: 1px solid transparent !important;
+}
+.tile-1:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-2 {
+  --delay: 0.15s;
+  --color: #4169e1;
+  border: 1px solid transparent !important;
+}
+.tile-2:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-3 {
+  --delay: 0.2s;
+  --color: #3178c6;
+  border: 1px solid transparent !important;
+}
+.tile-3:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-4 {
+  --delay: 0.25s;
+  --color: #ed8b00;
+  border: 1px solid transparent !important;
+}
+.tile-4:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-5 {
+  --delay: 0.3s;
+  --color: #5fa04e;
+  border: 1px solid transparent !important;
+}
+.tile-5:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-6 {
+  --delay: 0.35s;
+  --color: #3776ab;
+  border: 1px solid transparent !important;
+}
+.tile-6:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-7 {
+  --color: #f7df1e;
+  --delay: 0.4s;
+  border: 1px solid transparent !important;
+}
+.tile-7:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-8 {
+  --color: #00599c;
+  --delay: 0.45s;
+  border: 1px solid transparent !important;
+}
+.tile-8:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+.tile-9 {
+  --delay: 0.5s;
+  --color: #9f1d20;
+  border: 1px solid transparent !important;
+}
+.tile-9:hover {
+  --tw-shadow-color: var(--color) !important;
+  color: var(--color) !important;
+  border: 1px solid var(--color) !important;
+}
+
+.grid-background {
+  background-image: radial-gradient(
+      circle at center,
+      hsla(var(--background) / 0) 0%,
+      hsla(var(--background) / 0.6) 70%,
+      hsl(var(--background)) 100%
+    ),
+    linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+  background-size: 100% 100%, 25px 25px, 25px 25px;
+  background-position: center, 0 0, 0 0;
+}
+
+.hero-tile:hover .icon-tile:hover {
+  transition: color 0.075s ease-in-out, border-color 0.075s ease-in-out,
+    transform 0.5s ease-in-out, box-shadow 0.075s ease-in-out;
+}
+
+.path-1 {
+  transition: color 0.5s ease-in-out, stroke-dashoffset 0.5s 0s ease-in-out;
+  stroke-dashoffset: 39;
+}
+.hero-tile:hover .path-1 {
+  transition: color 0.5s ease-in-out, stroke-dashoffset 0.5s 0.6s ease-in-out;
+  stroke-dashoffset: 0;
+}
+.path-2 {
+  transition: color 0.5s ease-in-out, stroke-dashoffset 0.5s 0.4s ease-in-out;
+  stroke-dashoffset: -64;
+}
+.hero-tile:hover .path-2 {
+  transition: color 0.5s ease-in-out, stroke-dashoffset 0.5s 0.2s ease-in-out;
+  stroke-dashoffset: 0;
+}
+
+.waving-icon {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.hero-tile:hover .waving-icon {
+  transition: opacity 0.5s 0.9s ease-in-out;
+  opacity: 1;
+}
+
+.selection-icon {
+  --item-radius: 0.75rem;
+}

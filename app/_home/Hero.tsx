@@ -5,7 +5,14 @@ export default function Hero() {
   return (
     <section className="relative min-h-[80vh] w-screen flex flex-col items-center px-4">
       <div className="absolute inset-0 -z-10 bg-load-in">
-        <Image priority fill quality={100} className="object-cover" alt="Background photo" src="/images/bg.jpg" />
+        <Image
+          priority
+          fill
+          quality={100}
+          className="object-cover"
+          alt="Background photo"
+          src="/images/bg.jpg"
+        />
         <div className="absolute inset-0 hero-mask-gradient"></div>
       </div>
       <a
@@ -17,7 +24,9 @@ export default function Hero() {
         <p>Open to work</p>
         <ArrowRight className="h-4 w-4 -translate-x-2 group-hover:translate-x-1 transition opacity-0 group-hover:opacity-100" />
       </a>
-      <h1 className="md:text-7xl xs:text-6xl text-5xl font-display font-medium">Dominic Clerici</h1>
+      <h1 className="md:text-7xl xs:text-6xl text-5xl font-display font-medium">
+        Dominic Clerici
+      </h1>
       <h2 className="xs:text-2xl text-xl text-muted-foreground text-anim-2 font-display text-center">
         Engineer & designer creating online experiences.
       </h2>

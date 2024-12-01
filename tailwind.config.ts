@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        wave: "hand-wave 1s ease-in-out infinite",
+        "ping-hero": "pingHero 2s infinite linear",
+      },
+      boxShadow: {
+        tile: "var(--tw-shadow-color) 2px 2px 6px -1px inset",
+      },
       screens: {
         xs: "500px",
       },
@@ -20,6 +27,7 @@ const config: Config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        faded: "hsl(var(--faded))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -82,6 +90,16 @@ const config: Config = {
         "caret-blink": {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
+        },
+        "hand-wave": {
+          "0%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "100%": { transform: "rotate(-10deg)" },
+        },
+        pingHero: {
+          "0%": { transform: "scale(1)", opacity: "0.9" },
+          "50%": { transform: "scale(3)", opacity: "0" },
+          "100%": { transform: "scale(3)", opacity: "0" },
         },
       },
     },
