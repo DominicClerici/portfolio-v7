@@ -16,7 +16,7 @@ import {
 
 export default function NewHero() {
   return (
-    <section className="relative overflow-y-hidden">
+    <section className="relative overflow-y-hidden overflow-x-hidden">
       <div className="min-h-[90vh] overflow-hidden w-screen flex items-center max-w-screen-xl mx-auto md:pl-12 sm:pl-8 pl-4">
         <div className="w-fit relative z-10">
           <a
