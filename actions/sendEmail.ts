@@ -1,19 +1,24 @@
 "use server"
-import { Resend } from "resend"
+// import { Resend } from "resend"
 import { EmailTemplate } from "./EmailTemplate"
 
-const resend = new Resend(process.env.RESEND_KEY)
+// const resend = new Resend(process.env.RESEND_KEY)
 
 export default async function sendEmail(fd: FormData) {
   const values = Object.fromEntries(fd.entries())
-  const { name, email, message } = values as { name: string; email: string; message: string }
+  const { name, email, message } = values as {
+    name: string
+    email: string
+    message: string
+  }
   try {
-    const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["dclerici77@gmail.com"],
-      subject: `Portfolio form message from ${name}`,
-      react: EmailTemplate({ message: message, email: email, name: name }),
-    })
+    // const { data, error } = await resend.emails.send({
+    //   from: "Acme <onboarding@resend.dev>",
+    //   to: ["dclerici77@gmail.com"],
+    //   subject: `Portfolio form message from ${name}`,
+    //   react: EmailTemplate({ message: message, email: email, name: name }),
+    // })
+    const error = "yay"
 
     if (error) {
       return 1

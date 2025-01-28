@@ -19,6 +19,7 @@ const config: Config = {
         xs: "500px",
       },
       fontFamily: {
+        inter: ["var(--font-inter)"],
         display: ["var(--font-inter-display)"],
       },
       colors: {

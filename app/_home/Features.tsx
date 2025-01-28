@@ -18,6 +18,8 @@ import {
   ReactIcon,
   TypeScriptIcon,
 } from "./Icons"
+import Link from "next/link"
+import HoverArrow from "../HoverArrow"
 
 const IndianaLogo = ({ className }: { className: string }) => {
   return (
@@ -55,7 +57,7 @@ const MHSLogo = ({ className }: { className: string }) => {
 }
 
 const className = {
-  card: "border p-4 md:p-6 lg:p-5 2xl:p-6 rounded-2xl bg-card",
+  card: "border p-4 md:p-6 lg:p-5 2xl:p-6 rounded-2xl bg-faded diag-gradient-border h-min",
   title:
     "2xl:text-2xl lg:text-xl xs:text-2xl text-xl font-medium mb-2 flex items-center gap-2 font-display",
   subTitle:
@@ -130,7 +132,7 @@ export default function Features() {
             <a
               href="https://bloomington.iu.edu/index.html"
               target="_blank"
-              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg md:hover:bg-accent transition-colors"
+              className="flex items-center gap-4 group p-3 -mx-3 rounded-lg md:hover:bg-accent transition-colors"
             >
               <IndianaLogo className={className.logo} />
               <div className="flex flex-col">
@@ -152,7 +154,7 @@ export default function Features() {
             <a
               href="https://www.acalanes.k12.ca.us/miramonte/"
               target="_blank"
-              className="flex items-center group gap-4 p-4 -mx-4 md:hover:bg-accent transition-colors rounded-lg"
+              className="flex items-center group gap-4 p-3 -mx-3 md:hover:bg-accent transition-colors rounded-lg"
             >
               <MHSLogo className={className.logo} />
               <div className="flex flex-col">
@@ -165,6 +167,12 @@ export default function Features() {
                 </p>
               </div>
             </a>
+            <Link
+              className="text-muted-foreground font-light leading-none flex items-center gap-2 group ml-auto mt-2 -mb-2"
+              href="/about"
+            >
+              More about me <HoverArrow className="h-2.5 w-2.5" />
+            </Link>
           </div>
         </div>
         <div className={className.card} style={cardStyles.middle}>
@@ -176,7 +184,7 @@ export default function Features() {
             <a
               href="https://en.wikipedia.org/wiki/Artesian_Builds"
               target="_blank"
-              className="flex items-center gap-4 group p-4 -mx-4 rounded-lg md:hover:bg-accent transition-colors"
+              className="flex items-center gap-4 group p-3 -mx-3 rounded-lg md:hover:bg-accent transition-colors"
             >
               <ArtesianLogo className={className.logo} />
               <div className="flex flex-col">
@@ -195,7 +203,7 @@ export default function Features() {
             <a
               href="https://www.goodwill.org/"
               target="_blank"
-              className="flex items-center group gap-4 p-4 -mx-4 md:hover:bg-accent transition-colors rounded-lg"
+              className="flex items-center group gap-4 p-3 -mx-3 md:hover:bg-accent transition-colors rounded-lg"
             >
               <div className={`relative ${className.logo}`}>
                 <Image fill src={"/images/goodwill.png"} alt="Goodwill Logo" />
@@ -213,6 +221,12 @@ export default function Features() {
                 </p>
               </div>
             </a>
+            <Link
+              className="text-muted-foreground font-light leading-none flex items-center gap-2 group ml-auto mt-2 -mb-2"
+              href="/about#experience"
+            >
+              All experience <HoverArrow className="h-2.5 w-2.5" />
+            </Link>
           </div>
         </div>
         <div

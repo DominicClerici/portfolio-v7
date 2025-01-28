@@ -10,7 +10,7 @@
   --card-foreground: 0 0% 92%;
   --popover: 0 0% 10%;
   --popover-foreground: 0 0% 80%;
-  --primary: 239 83.5% 66.7%;
+  --primary: 189 100% 60.7%;
   --primary-foreground: 0 0% 0%;
   --secondary: 349 40% 35%;
   --secondary-foreground: 0 0% 100%;
@@ -46,6 +46,9 @@
     background-repeat: no-repeat;
     background-size: 100vw 200vh;
   }
+  html {
+    @apply font-inter;
+  }
 }
 @layer utilities {
   .diag-gradient-border {
@@ -54,6 +57,7 @@
   }
   .diag-gradient-border::after {
     content: "";
+    pointer-events: none;
     position: absolute;
     top: -1px;
     left: -1px;
@@ -71,7 +75,7 @@
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    border-radius: var(--item-radius);
+    border-radius: var(--item-radius, 1rem);
   }
   .hero-tile {
     @apply w-full h-full p-2 border bg-background rounded-xl transition-all duration-500 hover:border-foreground/50 hover:-translate-y-2 hover:-translate-x-2;
@@ -100,20 +104,32 @@
   }
 }
 
-.font-display {
-  font-family: "Inter Display", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+.text-gradient-1 {
+  background-image: linear-gradient(
+    70deg,
+    hsl(var(--primary) / 0.6),
+    hsl(var(--primary)),
+    hsl(var(--primary) / 0.6)
+  );
+  color: transparent;
+  background-clip: text;
 }
-.font-inter {
+
+/* .font-inter {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-html {
+.font-display {
+  font-family: "Inter Display", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+} */
+
+/* html {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
+} */
 
 @media (min-width: 768px) {
   html {

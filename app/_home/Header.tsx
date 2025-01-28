@@ -1,11 +1,12 @@
 import LogoSVG from "../LogoSVG"
 import MobileHeader from "./MobileHeader"
 import HoverButton from "../HoverButton"
+import HeroHeader from "./header/HeroHeader"
 
 export default function Header() {
   return (
     <>
-      <DesktopHeader />
+      <HeroHeader />
       <MobileHeader />
     </>
   )

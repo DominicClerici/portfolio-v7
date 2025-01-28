@@ -29,9 +29,8 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-primary font-medium text-lg">Pages</h2>
-          <TextEffect href="#about">About</TextEffect>
-          <TextEffect href="#featured">Featured Projects</TextEffect>
-          <TextEffect href="#connect">Contact</TextEffect>
+          <TextEffect href="/">Home</TextEffect>
+          <TextEffect href="/about">About</TextEffect>
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-primary font-medium text-lg">Socials</h2>
@@ -78,7 +77,7 @@ const TextEffect = ({
       <span className="absolute left-0 top-0 text-xl font-medium translate-y-0 group-hover:-translate-y-full transition-transform duration-[400ms] ease-in-out">
         {children}
       </span>
-      <span className="absolute font-bold text-primary left-0 top-0 translate-y-full group-hover:translate-y-0 transition-transform duration-[400ms] ease-in-out text-xl">
+      <span className="absolute font-semibold text-primary left-0 top-0 translate-y-full group-hover:translate-y-0 transition-transform duration-[400ms] ease-in-out text-xl">
         {children}
       </span>
     </a>

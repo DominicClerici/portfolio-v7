@@ -220,7 +220,7 @@ const RallySVG = ({ className }: { className: string }) => {
 
 const TechBadge = ({ children }: { children: string }) => {
   return (
-    <li className="text-slate-100 bg-slate-100/15 font-light px-2 py-0.5 rounded-full text-sm border border-t-slate-100/20 border-slate-100/10">
+    <li className="text-slate-100 bg-slate-100/15 font-light px-2 py-0.5 rounded-full text-sm border border-t-slate-100/20 border-slate-100/10 diag-gradient-border">
       {children}
     </li>
   )

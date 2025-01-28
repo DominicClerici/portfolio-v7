@@ -16,7 +16,7 @@ import {
 
 export default function NewHero() {
   return (
-    <section className="relative overflow-y-hidden">
+    <section className="relative overflow-hidden" id="hero">
       <div className="min-h-[90vh] overflow-hidden w-screen flex items-center max-w-screen-xl mx-auto md:pl-12 sm:pl-8 pl-4">
         <div className="w-fit relative z-10">
           <a
@@ -48,10 +48,10 @@ export default function NewHero() {
               <PaperclipIcon className="w-4 h-4 block sm:hidden" />
             </HoverButton>
             <HoverButton
-              href="#featured"
+              href="/about"
               className="secondary-button group button-style justify-between sm:justify-normal"
             >
-              See my work
+              More about me
               <HoverArrow className="w-3 h-3" />
             </HoverButton>
             {/* <a
@@ -62,11 +62,11 @@ export default function NewHero() {
           </a> */}
           </span>
         </div>
-        <div className=" w-[550px] absolute right-0 pointer-events-none md:pointer-events-auto">
+        <div className="w-[550px] absolute right-0 pointer-events-none opacity-50 md:pointer-events-auto md:opacity-100">
           <div
             style={{
               transform:
-                "rotateX(45deg) rotateZ(45deg) scale(1.4) translateX(50px) translateY(50px)",
+                "rotateX(45deg) rotateZ(45deg) scale(1.4) translateX(50px) translateY(200px)",
             }}
             className="grid-background w-full aspect-square grid grid-cols-2 grid-rows-2 gap-12 p-12"
           >

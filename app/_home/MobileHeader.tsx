@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import LogoSVG from "../LogoSVG"
+import Link from "next/link"
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,24 +30,11 @@ export default function MobileHeader() {
           !isOpen ? "-translate-y-full opacity-50" : "translate-y-0 opacity-100"
         } transition bg-background h-screen w-screen duration-500 fixed top-0 left-0 flex flex-col gap-6 xs:px-8 px-4 pt-24`}
       >
-        <HeaderButton i={1} href="#about" isOpen={isOpen} setIsOpen={setIsOpen}>
+        <HeaderButton i={1} href="/" isOpen={isOpen} setIsOpen={setIsOpen}>
+          Home
+        </HeaderButton>
+        <HeaderButton i={2} href="/about" isOpen={isOpen} setIsOpen={setIsOpen}>
           About
-        </HeaderButton>
-        <HeaderButton
-          i={2}
-          href="#featured"
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        >
-          Featured
-        </HeaderButton>
-        <HeaderButton
-          i={3}
-          href="#connect"
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        >
-          Connect
         </HeaderButton>
         <a
           style={{
@@ -83,7 +71,7 @@ const HeaderButton = ({
   i,
 }: HeaderButtonInterface) => {
   return (
-    <a
+    <Link
       style={{
         transitionDelay: `${isOpen ? i * 50 + 250 : 0}ms`,
       }}
@@ -96,6 +84,6 @@ const HeaderButton = ({
       onClick={() => setIsOpen(false)}
     >
       {children}
-    </a>
+    </Link>
   )
 }
