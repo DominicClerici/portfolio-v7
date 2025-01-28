@@ -38,3 +38,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large images for now
+public/images/gti.png
+public/images/hiking.jpg
